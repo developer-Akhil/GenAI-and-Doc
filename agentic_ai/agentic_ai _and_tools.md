@@ -21,7 +21,7 @@ In LangChain, tools are functions or APIs that extend the capabilities of a Larg
 * Function Calling: Tools are essentially Python functions (or similar in other languages) wrapped in a special way so the LLM can understand their purpose, input schema, and expected output.
 * ReAct Pattern: Agents typically follow a "Reasoning + Acting" loop, where they observe the output from a tool call and use that information to decide on the next action or formulate a final answer. 
 
-**Types of Tools**
+**Types of Tools**\
 LangChain provides a wide array of built-in tools and integrations with various providers: 
 
 * **ShellTool**(``from langchain_community.tools import ShellTool``)
@@ -35,22 +35,30 @@ It allows language models (LLMs) to perform real-time web searches and access up
 In LangChain, BaseTool is the abstract base class used to define tools that an LLM can call during agent execution.\
 BaseTool in LangChain is the abstract/base class that defines the standard interface for all “tools” an LLM agent can call. It specifies how a tool is named, described, validated, and executed.
 
-BaseTool defines:
-* The interface for tools
-* How tool inputs are validated
-* How tool execution is invoked
-* How tools are described to the LLM
-Agents rely on BaseTool to reason about which action to take and how to execute it.
+  BaseTool defines:
+    * The interface for tools
+    * How tool inputs are validated
+    * How tool execution is invoked
+  * How tools are described to the LLM
+  Agents rely on BaseTool to reason about which action to take and how to execute it.
 
-Why BaseTool Exists
+  Why BaseTool Exists
 
-LLMs cannot:
-* Access databases directly
-* Call APIs on their own
-* Execute Python code safely
+  LLMs cannot:
+  * Access databases directly
+  * Call APIs on their own
+  * Execute Python code safely
 
-BaseTool bridges this gap by:
-* Exposing controlled capabilities
-* Enforcing schemas
-* Preventing arbitrary execution
+  BaseTool bridges this gap by:
+  * Exposing controlled capabilities
+  * Enforcing schemas
+  * Preventing arbitrary execution
+
+**Tool Bindings**\
+In LangChain, **tool binding** is the process of attaching external tools (functions, APIs, etc.) to a Large Language Model (LLM) using the bind_tools() method. This enables the model to be aware of the tools' capabilities and their input schemas, allowing it to decide when to "call" them to perform specific actions or access real-time information. 
+
+**How it Works**
+* **Defining Tools**: First, you define a tool, which is essentially a Python function wrapped in a special format (like a BaseTool class or a Pydantic schema) that includes a name, a description of its purpose, and the schema for its arguments.
+* **Binding**: The bind_tools() method takes a list of these defined tools and attaches their schemas to the model instance. The tool metadata is passed along in every subsequent API call to the LLM.
+* **Model Decision**: When the model receives a user prompt, it can choose to return a tool call request (instead of a final text answer) if it determines a tool is needed to fulfill the request. The model generates the tool's name and the specific arguments to use.
 
