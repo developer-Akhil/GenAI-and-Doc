@@ -4,4 +4,4 @@
 4. [RAGAS](https://github.com/developer-Akhil/genai-and-doc/blob/main/ragas/ragas.md)
 5. [Ollama](https://github.com/developer-Akhil/genai-and-doc/tree/main/ollama)
 6. [Agentic AI](https://github.com/developer-Akhil/genai-and-doc/blob/main/agentic_ai/agentic_ai%20_and_tools.md)
-
+7. [LangChain](https://github.com/developer-Akhil/genai-and-doc/blob/main/langchain/langchain.md)
