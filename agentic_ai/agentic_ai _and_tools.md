@@ -1,6 +1,6 @@
-**What is Agentic AI?**
-
-While standard AI (like a basic chatbot) waits for you to tell it exactly what to do step-by-step, Agentic AI is designed to achieve a goal by planning its own steps, using tools, and correcting its own mistakes along the way.
+**What is Agentic AI?**\
+Agentic AI is a type of Artificial Intelligence that can act independently to achieve goals, instead of only responding to a single prompt or question. It behaves more like an “agent” that can plan, decide, and take actions step-by-step to complete a task.\
+While standard AI (like a basic chatbot) waits for you to tell it exactly what to do step-by-step, Agentic AI is designed to achieve a goal by planning its own steps, using tools, and correcting its own mistakes along the way.\
 Agentic AI is an AI system that can independently plan, decide, and execute actions across multiple steps, often by using tools, memory, and feedback loops, to accomplish a defined objective.
 
 **How Agentic AI Works (Conceptually)**\
