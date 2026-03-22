@@ -5,3 +5,4 @@
 5. [RAGAS](https://github.com/developer-Akhil/genai-and-doc/blob/main/ragas/ragas.md)
 6. [Ollama](https://github.com/developer-Akhil/genai-and-doc/tree/main/ollama)
 7. [Agentic AI](https://github.com/developer-Akhil/genai-and-doc/blob/main/agentic_ai/agentic_ai%20_and_tools.md)
+8. [Vectorless Rag](https://github.com/developer-Akhil/genai-and-doc/blob/main/vectorless_rag/vectorless_rag.md)
