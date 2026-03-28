@@ -43,6 +43,5 @@ Develop a chatbot using AI to assist the process of claim processing, and approv
 
 <img width="1762" height="783" alt="image" src="https://github.com/user-attachments/assets/12d03c5e-5fba-4f27-b575-e89dfbd3035b" />
 
-
 <img width="1471" height="682" alt="image" src="https://github.com/user-attachments/assets/6cc3565f-2357-40b3-8a69-5d2d1d1f53b4" />
 
