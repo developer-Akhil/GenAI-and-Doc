@@ -1,8 +1,9 @@
 # Transformer Type
 
-A Transformer is a Neural Network Architecture introduced by Google researchers in 2017 in a paper titled.\
-It was designed to handle sequential data (like text, speech, or time series) more efficiently than older models such as **RNNs (Recurrent Neural Networks)** and **LSTMs (Long Short-Term Memory networks)**.
-A Transformer in AI is a type of neural network architecture designed for processing sequential data, such as text, by learning context and tracking relationships between sequence elements using mechanisms called attention and self-attention. Transformers are the foundation for modern natural language processing (NLP) models like GPT (Generative Pretrained Transformer), BERT, and Gemini, and have also been adapted for computer vision, audio, and multimodal AI applications.
+A Transformer is a Neural Network Architecture introduced by Google researchers in 2017 in a paper titled.
+* It was designed to handle sequential data (like text, speech, or time series) more efficiently than older models such as **RNNs (Recurrent Neural Networks)** and **LSTMs (Long Short-Term Memory networks)**.
+* A Transformer is a type of neural network architecture designed for processing sequential data, such as text, by learning context and tracking relationships between sequence elements using mechanisms called attention and self-attention.
+* Transformers are the foundation for modern natural language processing (NLP) models like GPT (Generative Pretrained Transformer), BERT, and Gemini, and have also been adapted for computer vision, audio, and multimodal AI applications.
 
 
 **Core Idea**
