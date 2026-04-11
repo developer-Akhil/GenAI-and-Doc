@@ -68,3 +68,9 @@ What this means:
 * Multiply by values → get a weighted combination of information
 
 
+# Encoder and Decoder
+
+
+<img width="457" height="491" alt="image" src="https://github.com/user-attachments/assets/c9ea92f4-2fcc-4b04-a3ce-a74407ca0949" />
+
+
