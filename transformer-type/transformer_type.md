@@ -1,4 +1,4 @@
-# Transformer Type
+# Transformer
 
 A Transformer is a Neural Network Architecture introduced by Google researchers in 2017 in a paper titled.
 * It was designed to handle sequential data (like text, speech, or time series) more efficiently than older models such as **RNNs (Recurrent Neural Networks)** and **LSTMs (Long Short-Term Memory networks)**.
@@ -32,3 +32,40 @@ Since the model processes tokens in parallel, positional encodings are added to 
 * Image generation: Vision Transformers (ViT), DALL·E
 * Code generation: GitHub Copilot
 * Speech recognition: Whisper
+
+
+# Attention
+
+In a transformer, attention is the mechanism that lets the model decide which parts of the input matter most when processing each word (or token).\
+Instead of reading a sentence strictly left-to-right, attention allows every word to look at all other words and weigh their importance.
+
+When processing a word, attention lets the model ask: "Which other words in the sequence are most relevant to understanding this word?"
+
+**Intuition (simple idea)**
+
+Take this sentence:\
+“The cat sat on the mat because it was tired.”
+
+To understand what “it” refers to, the model needs to focus on “cat”, not “mat”.\
+Attention helps the model do exactly that:
+
+It assigns a **higher weight** to “cat”\
+Lower weights to less relevant words
+
+How it works (core idea)
+
+For each token, the transformer creates three vectors:
+* Query (Q) → what this word is looking for
+* Key (K) → what each word offers
+* Value (V) → the actual information of each word
+
+Then it computes:
+
+        <img width="456" height="76" alt="image" src="https://github.com/user-attachments/assets/d90d2c90-71cc-4434-a113-bdc5b4dd94eb" />
+
+What this means:
+* Compare the query with all keys → gives relevance scores
+* Apply softmax → turn scores into weights (probabilities)
+* Multiply by values → get a weighted combination of information
+
+
