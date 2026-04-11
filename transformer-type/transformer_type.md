@@ -48,20 +48,18 @@ Take this sentence:\
 
 To understand what “it” refers to, the model needs to focus on “cat”, not “mat”.\
 Attention helps the model do exactly that:
+* It assigns a **higher weight** to “cat”
+* Lower weights to less relevant words
 
-It assigns a **higher weight** to “cat”\
-Lower weights to less relevant words
-
-How it works (core idea)
-
+**How it works (core idea)**\
 For each token, the transformer creates three vectors:
 * Query (Q) → what this word is looking for
 * Key (K) → what each word offers
 * Value (V) → the actual information of each word
 
-Then it computes:
+Then it computes:\
+<img width="456" height="76" alt="image" src="https://github.com/user-attachments/assets/0f5a1c19-c113-4bf8-be44-c26414fbc32f" />
 
-        <img width="456" height="76" alt="image" src="https://github.com/user-attachments/assets/d90d2c90-71cc-4434-a113-bdc5b4dd94eb" />
 
 What this means:
 * Compare the query with all keys → gives relevance scores
