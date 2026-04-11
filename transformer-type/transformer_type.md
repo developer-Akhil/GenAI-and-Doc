@@ -37,7 +37,8 @@ Since the model processes tokens in parallel, positional encodings are added to 
 # Attention
 
 In a transformer, attention is the mechanism that lets the model decide which parts of the input matter most when processing each word (or token).\
-Instead of reading a sentence strictly left-to-right, attention allows every word to look at all other words and weigh their importance.
+Instead of reading a sentence strictly left-to-right, attention allows every word to look at all other words and weigh their importance.\
+Self-attention determines how important each word is in sentence by considering its relationship with other words
 
 When processing a word, attention lets the model ask: "Which other words in the sequence are most relevant to understanding this word?"
 
