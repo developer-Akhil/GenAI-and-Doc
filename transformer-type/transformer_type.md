@@ -67,8 +67,26 @@ What this means:
 * Apply softmax → turn scores into weights (probabilities)
 * Multiply by values → get a weighted combination of information
 
-
 # Encoder and Decoder
+
+**Encoder**
+The encoder's job is to read and understand the input — it converts input tokens into rich, context-aware representations (embeddings).\
+“reads the question and thinks deeply about it,” producing a rich internal representation.
+
+**What it does:**
+* Takes the input sequence (e.g., a sentence in French)
+* Applies self-attention — each word looks at every other word to understand context
+* Outputs a set of hidden states that capture the meaning of the whole input
+
+**Decoder**
+The decoder's job is to generate the output — it produces the output sequence one token at a time.\
+“writes the answer step by step,” peeking back into the encoder’s representation at each step to decide what to output next.
+
+**What it does:**
+* Takes the encoder's output + what it has generated so far
+* Uses masked self-attention (can only look at past tokens, not future ones)
+* Uses cross-attention to attend to the encoder's output
+* Predicts the next token
 
 
 <img width="457" height="491" alt="image" src="https://github.com/user-attachments/assets/c9ea92f4-2fcc-4b04-a3ce-a74407ca0949" />
