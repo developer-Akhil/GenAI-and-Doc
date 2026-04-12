@@ -88,7 +88,20 @@ The decoder's job is to generate the output — it produces the output sequence 
 * Uses cross-attention to attend to the encoder's output
 * Predicts the next token
 
-
 <img width="457" height="491" alt="image" src="https://github.com/user-attachments/assets/c9ea92f4-2fcc-4b04-a3ce-a74407ca0949" />
 
+# Contextual Embeddings
+
+In the world of Natural Language Processing (NLP), **contextual embeddings** are the "brains" that allow AI to understand that words can change meaning based on their surroundings.
+
+Before these existed, we used **static embeddings** (like Word2vec), where the word "bank" always had the same mathematical value, whether you were talking about a river or a check. Contextual embeddings fixed that.
+
+The Core Concept: The "**Polysemy**" Problem
+
+The primary goal of contextual embeddings is to handle **polysemy**—words that are spelled the same but have different meanings.
+
+* **Sentence A**: "I need to deposit money at the **bank**."
+* **Sentence B**: "The fisherman sat by the river **bank**."
+
+In a static model, the vector for "bank" is an average of both meanings, which is technically incorrect for both. A contextual embedding model (like BERT or GPT) looks at the neighboring words ("deposit/money" vs. "fisherman/river") and generates a unique mathematical representation for "bank" specific to that sentence.
 
