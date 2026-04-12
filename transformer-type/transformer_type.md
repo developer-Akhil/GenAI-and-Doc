@@ -67,7 +67,7 @@ What this means:
 * Apply softmax → turn scores into weights (probabilities)
 * Multiply by values → get a weighted combination of information
 
-# Encoder and Decoder
+# Encoder, Contextual Embeddings and Decoder
 
 **Encoder**\
 The encoder's job is to read and understand the input — it converts input tokens into rich, context-aware representations (embeddings).\
@@ -103,3 +103,75 @@ The decoder's job is to generate the output — it produces the output sequence 
 
 <img width="457" height="491" alt="image" src="https://github.com/user-attachments/assets/c9ea92f4-2fcc-4b04-a3ce-a74407ca0949" />
 
+# Multi-Head Attention
+Multi-Head Attention is a mechanism in Transformers where the model looks at the input from multiple “perspectives” (heads) at the same time to better understand relationships between words.
+
+A single attention head has a limited "viewpoint." If it's focusing on the grammar of a sentence, it might miss the emotional tone or the relationship between distant words. By using multiple heads, the model can capture different aspects of the text at the same time.
+
+Intuition (Very Important)
+
+Instead of using one attention, the model uses multiple attentions in parallel.\
+Each “head” learns something different:\
+Head 1 → grammar (who did what)
+Head 2 → meaning (semantic relation)
+Head 3 → position/context
+Head 4 → long-distance dependencies
+
+
+**How it Works (The Technical Flow)**
+Splitting: The input (the word embeddings) is split into multiple low-dimensional spaces. If your total embedding size is 512 and you have 8 heads, each head works on a size of 64.
+
+Parallel Scaled Dot-Product Attention: Each head performs the "Query, Key, Value" (Q, K, V) calculation independently.
+
+Query (Q): What am I looking for?
+
+Key (K): What information do I have?
+
+Value (V): What information is actually useful?
+
+Concatenation: Once all heads have finished their "votes," their outputs are glued back together (concatenated).
+
+Final Linear Projection: The combined output is passed through one last mathematical filter (a linear layer) to make sure the information is unified before moving to the next part of the network.
+Then all results are combined.
+
+```
+Input X
+   │
+   ├──► Linear(Wq₁, Wk₁, Wv₁) ──► Attention Head 1 ──►┐
+   ├──► Linear(Wq₂, Wk₂, Wv₂) ──► Attention Head 2 ──►│
+   ├──► Linear(Wq₃, Wk₃, Wv₃) ──► Attention Head 3 ──►├──► Concat ──► Linear(Wo) ──► Output
+   │              ...                                   │
+   └──► Linear(Wqₕ, Wkₕ, Wvₕ) ──► Attention Head h ──►┘
+```
+
+Formula:
+
+  <img width="571" height="46" alt="image" src="https://github.com/user-attachments/assets/d6ba85bf-4dc3-4145-8bb1-098d258719e8" />
+
+where each:
+
+  <img width="443" height="51" alt="image" src="https://github.com/user-attachments/assets/1028c265-e4dd-42ab-b048-5fa5f1e7b406" />
+
+
+**Full Picture inside a Transformer Layer**
+```
+Input Embeddings
+       │
+  ┌────▼────────────────┐
+  │   Multi-Head        │
+  │   Attention         │
+  └────┬────────────────┘
+       │
+  Add & Norm  (residual connection)
+       │
+  ┌────▼────────────────┐
+  │  Feed Forward       │
+  │  Network (FFN)      │
+  └────┬────────────────┘
+       │
+  Add & Norm
+       │
+    Output
+```
+
+  
