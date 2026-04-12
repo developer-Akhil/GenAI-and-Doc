@@ -69,29 +69,15 @@ What this means:
 
 # Encoder and Decoder
 
-**Encoder**
+**Encoder**\
 The encoder's job is to read and understand the input — it converts input tokens into rich, context-aware representations (embeddings).\
 “reads the question and thinks deeply about it,” producing a rich internal representation.
 
-**What it does:**
 * Takes the input sequence (e.g., a sentence in French)
 * Applies self-attention — each word looks at every other word to understand context
 * Outputs a set of hidden states that capture the meaning of the whole input
 
-**Decoder**
-The decoder's job is to generate the output — it produces the output sequence one token at a time.\
-“writes the answer step by step,” peeking back into the encoder’s representation at each step to decide what to output next.
-
-**What it does:**
-* Takes the encoder's output + what it has generated so far
-* Uses masked self-attention (can only look at past tokens, not future ones)
-* Uses cross-attention to attend to the encoder's output
-* Predicts the next token
-
-<img width="457" height="491" alt="image" src="https://github.com/user-attachments/assets/c9ea92f4-2fcc-4b04-a3ce-a74407ca0949" />
-
-# Contextual Embeddings
-
+**Contextual Embeddings**\
 In the world of Natural Language Processing (NLP), **contextual embeddings** are the "brains" that allow AI to understand that words can change meaning based on their surroundings.
 
 Before these existed, we used **static embeddings** (like Word2vec), where the word "bank" always had the same mathematical value, whether you were talking about a river or a check. Contextual embeddings fixed that.
@@ -104,4 +90,16 @@ The primary goal of contextual embeddings is to handle **polysemy**—words that
 * **Sentence B**: "The fisherman sat by the river **bank**."
 
 In a static model, the vector for "bank" is an average of both meanings, which is technically incorrect for both. A contextual embedding model (like BERT or GPT) looks at the neighboring words ("deposit/money" vs. "fisherman/river") and generates a unique mathematical representation for "bank" specific to that sentence.
+
+**Decoder**\
+The decoder's job is to generate the output — it produces the output sequence one token at a time.\
+“writes the answer step by step,” peeking back into the encoder’s representation at each step to decide what to output next.
+
+**What it does:**
+* Takes the encoder's output + what it has generated so far
+* Uses masked self-attention (can only look at past tokens, not future ones)
+* Uses cross-attention to attend to the encoder's output
+* Predicts the next token
+
+<img width="457" height="491" alt="image" src="https://github.com/user-attachments/assets/c9ea92f4-2fcc-4b04-a3ce-a74407ca0949" />
 
