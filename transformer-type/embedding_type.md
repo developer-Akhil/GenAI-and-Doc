@@ -9,7 +9,7 @@ so the model can understand and process them. \
 Computers can’t understand words directly — they only understand numbers. \
 So before processing text, we must represent each word numerically. \
 Older methods used:
-  * One-hot encoding: e.g. “dog” → [0, 0, 1, 0, 0] (problem: very large and sparse vectors — no sense of meaning or similarity).\
+  * One-hot encoding: e.g. “dog” → [0, 0, 1, 0, 0] (problem: very large and sparse vectors — no sense of meaning or similarity).
 
 The **Embedding Layer** solves this by learning compact, meaningful numerical representations.
 
