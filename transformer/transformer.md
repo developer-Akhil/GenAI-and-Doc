@@ -21,8 +21,8 @@ After attention, each token passes through a neural network layer to further pro
 **5. Positional Encoding**\
 Since the model processes tokens in parallel, positional encodings are added to tell the model the order of words.\
 **6. Encoder–Decoder Structure**
- * **Encoder**: Reads and understands the input (used in models like BERT)\
- * **Decoder**: Generates output text (used in models like GPT)\
+ * **Encoder**: Reads and understands the input (used in models like BERT)
+ * **Decoder**: Generates output text (used in models like GPT)
  * **Both together**: Used in translation models
 
 
