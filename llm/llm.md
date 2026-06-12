@@ -24,3 +24,7 @@ A Large Language Model (LLM) is a deep learning model, typically based on the Tr
 **Simple Analogy**\
 Think of an LLM as a person who has read an enormous library of books and documents and learned the patterns of language. When asked a question, it doesn't search for a memorized answer; instead, 
 it generates a response by predicting the most appropriate sequence of words based on what it has learned.
+
+
+RAGs
+
