@@ -1,4 +1,4 @@
-# Unlocking Knowledge and Empowering Students with AI (Chat Scholar)
+# EssayMentor AI
 
 ## Problem Statement:
 In today's digital age, students are inundated with information from textbooks, research papers, and online resources. Navigating this vast sea of knowledge and extracting meaningful insights can be overwhelming. Chat Scholar addresses this challenge by providing an AI-powered platform that simplifies academic learning and enhances the writing process.
